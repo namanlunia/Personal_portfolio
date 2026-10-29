@@ -1,0 +1,16 @@
+.site-footer {
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-8);
+  border-top: 1px solid var(--border-subtle);
+  background-color: var(--bg-base);
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+

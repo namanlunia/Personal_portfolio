@@ -1,0 +1,212 @@
+.hero-section {
+  position: relative;
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-8);
+  overflow: hidden;
+  background-image: 
+    linear-gradient(to right, rgba(35, 40, 56, 0.22) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(35, 40, 56, 0.22) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: center center;
+}
+
+/* Subtle fade to solid background at bottom of hero */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 96px;
+  background: linear-gradient(to bottom, transparent, var(--bg-base));
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 960px) {
+  .hero-grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: var(--space-8);
+  }
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-violet);
+  margin-bottom: var(--space-1);
+}
+
+.hero-name {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.hero-role {
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  font-weight: 500;
+  color: var(--accent-cyan);
+  margin-bottom: var(--space-2);
+  line-height: 1.4;
+}
+
+.hero-tagline {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: 560px;
+  margin-bottom: var(--space-4);
+}
+
+/* Currently learning chip */
+.hero-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 8px 16px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-panel);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.chip-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--status-amber);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* Hero CTA buttons */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Status Panel */
+.status-panel-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle at center, var(--accent-violet-glow) 0%, transparent 65%);
+  filter: blur(28px);
+  pointer-events: none;
+  z-index: 0;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+
+.status-panel {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-panel);
+  padding: var(--space-4);
+  font-family: var(--font-mono);
+  transition: border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.status-panel:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+}
+
+.status-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: var(--space-2);
+  margin-bottom: var(--space-3);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.status-panel-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.status-panel-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.panel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--border-subtle);
+}
+
+.status-rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.status-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.status-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-cyan);
+}
+
+.status-value {
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  word-break: break-word;
+}
+
